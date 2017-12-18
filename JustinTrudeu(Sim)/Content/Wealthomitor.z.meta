@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "Wealthomitor",
+		uint64 ResourceId = 5a552e860c1b95fe,
+	},
+},

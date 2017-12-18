@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "SkinChooser",
+		uint64 ResourceId = 5a55c1ccf6741f6a,
+	},
+},

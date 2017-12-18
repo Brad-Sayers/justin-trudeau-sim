@@ -1,0 +1,140 @@
+class Wealthomitor : ZilchComponent
+{
+    var Positive : Cog;
+    var Positive1 : Cog;
+    var Positive2 : Cog;
+    var Positive3 : Cog;
+    var Positive4 : Cog;
+    var Positive5 : Cog;
+    var Positive6 : Cog;
+    var Positive7 : Cog;
+    var Positive8 : Cog;
+    var Negative : Cog;
+    var Negative1 : Cog;
+    var Negative2 : Cog;
+    var Negative3 : Cog;
+    var Negative4 : Cog;
+    var Negative5 : Cog;
+    var Negative6 : Cog;
+    var Negative7 : Cog;
+    var Negative8 : Cog;
+    [Static]
+    var Wealthomitor : Real;
+    [Static]
+    var NegativeBool : Boolean  = false;
+    [Static]
+    var PositiveBool : Boolean  = false;
+    [Property]
+    var WinLevel:Level;
+    function Initialize(init : CogInitializer)
+    {
+        this.Positive = this.Space.CreateAtPosition(Archetype.Positive, Real3(0,9,0));
+        this.Positive1 = this.Space.CreateAtPosition(Archetype.Positive, Real3(1,9,0));
+        this.Positive2 = this.Space.CreateAtPosition(Archetype.Positive, Real3(2,9,0));
+        this.Positive3 = this.Space.CreateAtPosition(Archetype.Positive, Real3(3,9,0));
+        this.Positive4 = this.Space.CreateAtPosition(Archetype.Positive, Real3(4,9,0));
+        this.Positive5 = this.Space.CreateAtPosition(Archetype.Positive, Real3(5,9,0));
+        this.Positive6 = this.Space.CreateAtPosition(Archetype.Positive, Real3(6,9,0));
+        this.Positive7 = this.Space.CreateAtPosition(Archetype.Positive, Real3(7,9,0));
+        this.Positive8 = this.Space.CreateAtPosition(Archetype.Positive, Real3(8,9,0));
+        this.Negative = this.Space.CreateAtPosition(Archetype.Negative, Real3(0,9,0));
+        this.Negative1 = this.Space.CreateAtPosition(Archetype.Negative, Real3(-1,9,0));
+        this.Negative2 = this.Space.CreateAtPosition(Archetype.Negative, Real3(-2,9,0));
+        this.Negative3 = this.Space.CreateAtPosition(Archetype.Negative, Real3(-3,9,0));
+        this.Negative4 = this.Space.CreateAtPosition(Archetype.Negative, Real3(-4,9,0));
+        this.Negative5 = this.Space.CreateAtPosition(Archetype.Negative, Real3(-5,9,0));
+        this.Negative6 = this.Space.CreateAtPosition(Archetype.Negative, Real3(-6,9,0));
+        this.Negative7 = this.Space.CreateAtPosition(Archetype.Negative, Real3(-7,9,0));
+        this.Negative8 = this.Space.CreateAtPosition(Archetype.Negative, Real3(-8,9,0));
+        this.Positive;
+        this.Positive1;
+        this.Positive2;
+        this.Positive3;
+        this.Positive4;
+        this.Positive5;
+        this.Positive6;
+        this.Positive7;
+        this.Positive8;
+        this.Negative;
+        this.Negative1;
+        this.Negative2;
+        this.Negative3;
+        this.Negative4;
+        this.Negative5;
+        this.Negative6;
+        this.Negative7;
+        this.Negative8;
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if(Zero.Keyboard.KeyIsDown(Keys.P))
+        {
+            Wealthomitor.Wealthomitor = 100;
+        }
+        if(Zero.Keyboard.KeyIsDown(Keys.L))
+        {
+            Wealthomitor.Wealthomitor = -100;
+        }
+        if(Wealthomitor.Wealthomitor >= 10){this.Positive.Sprite.Visible = true;}
+        if(Wealthomitor.Wealthomitor >= 20){this.Positive1.Sprite.Visible = true;}
+        if(Wealthomitor.Wealthomitor >= 30){this.Positive2.Sprite.Visible = true;}
+        if(Wealthomitor.Wealthomitor >= 40){this.Positive3.Sprite.Visible = true;}
+        if(Wealthomitor.Wealthomitor >= 50){this.Positive4.Sprite.Visible = true;}
+        if(Wealthomitor.Wealthomitor >= 60){this.Positive5.Sprite.Visible = true;}
+        if(Wealthomitor.Wealthomitor >= 70){this.Positive6.Sprite.Visible = true;}
+        if(Wealthomitor.Wealthomitor >= 80){this.Positive7.Sprite.Visible = true;}
+        if(Wealthomitor.Wealthomitor >= 90){this.Positive8.Sprite.Visible = true;}
+        if(Wealthomitor.Wealthomitor <= -10){this.Negative.Sprite.Visible = true;}
+        if(Wealthomitor.Wealthomitor <= -20){this.Negative1.Sprite.Visible = true;}
+        if(Wealthomitor.Wealthomitor <= -30){this.Negative2.Sprite.Visible = true;}
+        if(Wealthomitor.Wealthomitor <= -40){this.Negative3.Sprite.Visible = true;}
+        if(Wealthomitor.Wealthomitor <= -50){this.Negative4.Sprite.Visible = true;}
+        if(Wealthomitor.Wealthomitor <= -60){this.Negative5.Sprite.Visible = true;}
+        if(Wealthomitor.Wealthomitor <= -70){this.Negative6.Sprite.Visible = true;}
+        if(Wealthomitor.Wealthomitor <= -80){this.Negative7.Sprite.Visible = true;}
+        if(Wealthomitor.Wealthomitor <= -90){this.Negative8.Sprite.Visible = true;}
+        
+        if(Wealthomitor.Wealthomitor < 10){this.Positive.Sprite.Visible = false;}
+        if(Wealthomitor.Wealthomitor < 20){this.Positive1.Sprite.Visible = false;}
+        if(Wealthomitor.Wealthomitor < 30){this.Positive2.Sprite.Visible = false;}
+        if(Wealthomitor.Wealthomitor < 40){this.Positive3.Sprite.Visible = false;}
+        if(Wealthomitor.Wealthomitor < 50){this.Positive4.Sprite.Visible = false;}
+        if(Wealthomitor.Wealthomitor < 60){this.Positive5.Sprite.Visible = false;}
+        if(Wealthomitor.Wealthomitor < 70){this.Positive6.Sprite.Visible = false;}
+        if(Wealthomitor.Wealthomitor < 80){this.Positive7.Sprite.Visible = false;}
+        if(Wealthomitor.Wealthomitor < 90){this.Positive8.Sprite.Visible = false;}
+        if(Wealthomitor.Wealthomitor > -10){this.Negative.Sprite.Visible = false;}
+        if(Wealthomitor.Wealthomitor > -20){this.Negative1.Sprite.Visible = false;}
+        if(Wealthomitor.Wealthomitor > -30){this.Negative2.Sprite.Visible = false;}
+        if(Wealthomitor.Wealthomitor > -40){this.Negative3.Sprite.Visible = false;}
+        if(Wealthomitor.Wealthomitor > -50){this.Negative4.Sprite.Visible = false;}
+        if(Wealthomitor.Wealthomitor > -60){this.Negative5.Sprite.Visible = false;}
+        if(Wealthomitor.Wealthomitor > -70){this.Negative6.Sprite.Visible = false;}
+        if(Wealthomitor.Wealthomitor > -80){this.Negative7.Sprite.Visible = false;}
+        if(Wealthomitor.Wealthomitor > -90){this.Negative8.Sprite.Visible = false;}
+        
+        if(YesNo.PlayNeg)
+        {
+            this.Owner.SoundEmitter.PlayCue(SoundCue.WealthDown);
+            YesNo.PlayNeg = false; 
+        }
+        if(YesNo.PlayPos)
+        {
+            this.Owner.SoundEmitter.PlayCue(SoundCue.WealthUp);
+            YesNo.PlayPos = false;
+        }
+        
+        if(Wealthomitor.Wealthomitor == 100)
+        {
+            this.Space.LoadLevel(this.WinLevel);
+            Wealthomitor.Wealthomitor = 0;
+        }
+        else if(Wealthomitor.Wealthomitor == -100)
+        {
+            this.Space.LoadLevel(Level.LoseLevel);
+            Wealthomitor.Wealthomitor = 0;
+        }
+    }
+}

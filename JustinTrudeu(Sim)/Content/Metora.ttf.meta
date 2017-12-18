@@ -1,0 +1,8 @@
+FontContent = 
+{
+	FontBuilder = 
+	{
+		string Name = "Metora",
+		uint64 ResourceId = 5a5528762ce349e7,
+	},
+},

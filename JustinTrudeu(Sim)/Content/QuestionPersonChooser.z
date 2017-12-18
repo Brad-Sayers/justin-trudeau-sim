@@ -1,0 +1,25 @@
+class QuestionPersonChooser : ZilchComponent
+{
+    var ChangeSkin : Boolean = true;
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        this.Owner.Sprite.SpriteSource = SpriteSource.ClassAnimation;
+        this.Owner.Sprite.AnimationSpeed = 0;
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if(this.ChangeSkin)
+        {
+            this.SkinGen();
+            this.ChangeSkin = false;
+        }
+    }
+    
+    function SkinGen()
+    {
+        var randomSkinGen : Random = Random();
+        this.Owner.Sprite.CurrentFrame = randomSkinGen.DieRoll(this.Owner.Sprite.SpriteSource.FrameCount) - 1;
+    }
+}

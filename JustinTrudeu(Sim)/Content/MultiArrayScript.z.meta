@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "MultiArrayScript",
+		uint64 ResourceId = 5a50e759517dd538,
+	},
+},

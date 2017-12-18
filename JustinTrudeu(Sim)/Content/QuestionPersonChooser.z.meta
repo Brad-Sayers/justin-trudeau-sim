@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "QuestionPersonChooser",
+		uint64 ResourceId = 5a561d5c27a374ac,
+	},
+},

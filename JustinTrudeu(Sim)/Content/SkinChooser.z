@@ -1,0 +1,28 @@
+class SkinChooser : ZilchComponent
+{
+    [Static]
+    var CostumeNumber : Integer;
+    var ChangeSkin : Boolean = true;
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        this.Owner.Sprite.SpriteSource = SpriteSource.JustinTrudeauSkin;
+        this.Owner.Sprite.AnimationSpeed = 0;
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if(this.ChangeSkin)
+        {
+            this.SkinGen();
+            this.ChangeSkin = false;
+        }
+    }
+    
+    function SkinGen()
+    {
+        var randomSkinGen : Random = Random();
+        this.Owner.Sprite.CurrentFrame = randomSkinGen.DieRoll(this.Owner.Sprite.SpriteSource.FrameCount) - 1;
+        SkinChooser.CostumeNumber = this.Owner.Sprite.CurrentFrame;
+    }
+}

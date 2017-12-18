@@ -1,0 +1,95 @@
+class YesNo : ZilchComponent
+{
+    [Property]
+    var Yes : Boolean = false;
+    [Property]
+    var No : Boolean = false;
+    [Static]
+    var No : String ;
+    [Static]
+    var Yes : String ;
+    [Static]
+    var PlayPos : Boolean;
+    [Static]
+    var PlayNeg : Boolean;
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Owner, Events.MouseEnter, this.OnMouseEnter);
+        Zero.Connect(this.Owner, Events.MouseExit, this.OnMouseExit);
+        Zero.Connect(this.Owner, Events.MouseDown, this.OnMouseDown);
+        Zero.Connect(this.Owner, Events.MouseUp, this.OnMouseUp);
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if(GameLoader.RestartBool)
+        {
+            this.Owner.Destroy();
+        }
+    }
+
+    function YesNo()
+    {
+        var text : Cog = this.Space.FindFirstObjectByName("QuestionText");
+        if(this.Yes)
+        {
+            if(TextChooser.ChosenText % 2 != 0)
+            {
+                Wealthomitor.Wealthomitor -= 10;
+                Wealthomitor.NegativeBool = true;
+                text.SpriteText.Text = YesNo.Yes;
+                GameLoader.RestartBool = true;
+                YesNo.PlayNeg = true;
+            }
+            else if(TextChooser.ChosenText %2 == 0)
+            {
+                Wealthomitor.Wealthomitor += 10;
+                Wealthomitor.PositiveBool = true;
+                text.SpriteText.Text = YesNo.Yes;
+                GameLoader.RestartBool = true;
+                YesNo.PlayPos = true;
+            }
+        }
+        if(this.No)
+        {
+            if(TextChooser.ChosenText % 2 != 0)
+            {
+                Wealthomitor.Wealthomitor += 10;
+                Wealthomitor.PositiveBool = true;
+                text.SpriteText.Text = YesNo.No;
+                GameLoader.RestartBool = true;
+                YesNo.PlayPos = true;
+            }
+            else if(TextChooser.ChosenText %2 == 0)
+            {
+                Wealthomitor.Wealthomitor -= 10;
+                Wealthomitor.NegativeBool = true;
+                text.SpriteText.Text = YesNo.No;
+                GameLoader.RestartBool = true;
+                YesNo.PlayNeg = true;
+            }
+        }
+        return;
+    }
+
+    function OnMouseUp(event : ViewportMouseEvent)
+    {
+        this.YesNo();
+    }
+
+    function OnMouseDown(event : ViewportMouseEvent)
+    {
+        this.Owner.Sprite.Color = this.Owner.Sprite.Color + Real4(0.0, 0.0, 0.0, 1.0 - this.Owner.Sprite.Color.W);
+    }
+
+    function OnMouseExit(event : ViewportMouseEvent)
+    {
+        this.Owner.Sprite.Color = this.Owner.Sprite.Color + Real4(0.0, 0.0, 0.0, 1.0 - this.Owner.Sprite.Color.W);
+    }
+
+    function OnMouseEnter(event : ViewportMouseEvent)
+    {
+        this.Owner.Sprite.Color = this.Owner.Sprite.Color + Real4(0.0, 0.0, 0.0, 0.75 - this.Owner.Sprite.Color.W);
+    }
+}

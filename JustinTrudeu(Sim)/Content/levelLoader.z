@@ -1,0 +1,89 @@
+class GameLoader : ZilchComponent
+{
+    [Static]
+    var LocationNum : Integer;
+    [Static]
+    var MenuBool : Boolean;
+    [Static]
+    var RestartBool : Boolean;
+    var Timer : Real;
+    [Static]
+    var GameLoaderBool : Boolean;
+    [Property]
+    var Level : Archetype;
+    [Property]
+    var Background : Archetype;
+    [Property]
+    var Player : Archetype;
+    [Property]
+    var Text : Archetype;
+    [Property]
+    var Yes : Archetype;
+    [Property]
+    var No : Archetype;
+    [Property]
+    var Question : Archetype;
+    [Property]
+    var Main : Level;
+    var LevelRight : Cog ;
+    var LevelMiddle : Cog ;
+    var LevelLeft : Cog ;
+    var PlayerPos : Cog;
+    function Initialize(init : CogInitializer)
+    {
+        GameLoader.MenuBool = true;
+        GameLoader.GameLoaderBool = false;
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if(GameLoader.RestartBool)
+        {
+            this.Timer+= event.Dt;
+        }
+        if(this.Timer >= 4)
+        {
+            this.Space.LoadLevel(this.Main);
+            GameLoader.RestartBool = false;
+        }
+        if(GameLoader.MenuBool)
+        {
+            LocationChooser.DestroyBool = false;
+            this.LevelMenu();
+            GameLoader.MenuBool = false;
+        }
+        if(GameLoader.GameLoaderBool)
+        {
+            this.GameLoader();
+        }
+    }
+    
+    function LevelMenu()
+    {
+        this.LevelRight= this.Space.CreateAtPosition(this.Level, Real3(10,0,0));
+        this.LevelMiddle= this.Space.CreateAtPosition(this.Level, Real3(0,0,0));
+        this.LevelLeft= this.Space.CreateAtPosition(this.Level, Real3(-10,0,0));
+        this.LevelRight; this.LevelRight.LocationChooser.Right = true;
+        this.LevelMiddle; this.LevelMiddle.LocationChooser.Middle = true;
+        this.LevelLeft; this.LevelLeft.LocationChooser.Left = true;
+        this.Space.CreateAtPosition(Archetype.LevelSelect, Real3(0,0,-10));
+        this.PlayerPos = this.Space.CreateAtPosition(this.Player, Real3(0,-5,0));
+        this.PlayerPos;
+    }
+    function GameLoader()
+    {
+        var background : Cog = this.Space.CreateAtPosition(this.Background, Real3(0,0,-10));
+        background;
+        background.Sprite.AnimationSpeed = 0;
+        background.Sprite.CurrentFrame = GameLoader.LocationNum;
+        this.PlayerPos.Transform.Translation = Real3(-5,-8,0);
+        var question : Cog = this.Space.CreateAtPosition(this.Question,Real3(5,-8,0));
+        question;
+        question.Sprite.FlipX = true;
+        this.Space.CreateAtPosition(this.Text, Real3(0,-4,0));
+        this.Space.CreateAtPosition(this.Yes, Real3(-3,-7,0));
+        this.Space.CreateAtPosition(this.No, Real3(3,-7,0));
+        GameLoader.GameLoaderBool = false;
+    }
+}

@@ -1,0 +1,307 @@
+class MultiArrayScript : ZilchComponent
+{
+    [Static]
+    var MultiArray : Array[Array[String]] = new Array[Array[String]]();
+    function Initialize(init : CogInitializer)
+    {
+        MultiArrayScript.MultiArray.Add(new Array[String]());
+        MultiArrayScript.MultiArray[0].Add("Are you still going to sign the new vaping bill?");
+        MultiArrayScript.MultiArray[0].Add("Well,addictions will rule all.");
+        MultiArrayScript.MultiArray[0].Add("You care about People's health and addictions to smoking!");
+        
+        MultiArrayScript.MultiArray.Add(new Array[String]());
+        MultiArrayScript.MultiArray[1].Add("I have some problems with the syrians in this country. Do you agree to get rid of them?");
+        MultiArrayScript.MultiArray[1].Add("Thank god. Those syrians won't be bothering us with their religion anymore.");
+        MultiArrayScript.MultiArray[1].Add("You don't love canada you bigot. We should have never elected you.");
+        
+        MultiArrayScript.MultiArray.Add(new Array[String]());
+        MultiArrayScript.MultiArray[2].Add("Do you think that These souls should be saved?");
+        MultiArrayScript.MultiArray[2].Add("I hope you know that these souls were against Canada. Oh well.");
+        MultiArrayScript.MultiArray[2].Add("Good.I was thinking the same thing.");
+        
+        MultiArrayScript.MultiArray.Add(new Array[String]());
+        MultiArrayScript.MultiArray[3].Add("I believe that The Canucks should have won the stanley cup. What do you think?");
+        MultiArrayScript.MultiArray[3].Add("Ahh a Canucks fan,should have known.");
+        MultiArrayScript.MultiArray[3].Add("Leave this place.");
+        
+        MultiArrayScript.MultiArray.Add(new Array[String]());
+        MultiArrayScript.MultiArray[4].Add("Do you think that you are a great Prime minister?");
+        MultiArrayScript.MultiArray[4].Add("Huh,that is good to know.");
+        MultiArrayScript.MultiArray[4].Add("So humble,I like a Prime minister who is humble.");
+        
+        MultiArrayScript.MultiArray.Add(new Array[String]());
+        MultiArrayScript.MultiArray[5].Add("Will Marijuana ever be legal for public use in Canada?");
+        MultiArrayScript.MultiArray[5].Add("Good I was just going to buy it illegally anyway.");
+        MultiArrayScript.MultiArray[5].Add("Awe I wanted that devels lettuce in my pipe.");
+        
+        MultiArrayScript.MultiArray.Add(new Array[String]());
+        MultiArrayScript.MultiArray[6].Add("When will we be like America?");
+        MultiArrayScript.MultiArray[6].Add("That doesn't answer my question on when. Do you only speak in yes or no?");
+        MultiArrayScript.MultiArray[6].Add("So we aren't turning into America? What do you mean.");
+        
+        MultiArrayScript.MultiArray.Add(new Array[String]());
+        MultiArrayScript.MultiArray[7].Add("Is Santa real?");
+        MultiArrayScript.MultiArray[7].Add("yay,you still believe.");
+        MultiArrayScript.MultiArray[7].Add("Waaaaaaa... My childhood has been ruined.");
+        
+        MultiArrayScript.MultiArray.Add(new Array[String]());
+        MultiArrayScript.MultiArray[8].Add("Are we going to be invaded by Islam at all?");
+        MultiArrayScript.MultiArray[8].Add("Well what the hell are you doing. You obviously aren't doing your job.");
+        MultiArrayScript.MultiArray[8].Add("At least you are protecting us from danger.");
+        
+        MultiArrayScript.MultiArray.Add(new Array[String]());
+        MultiArrayScript.MultiArray[9].Add("Do you support Net Neutrality?");
+        MultiArrayScript.MultiArray[9].Add("Thank god. It won't come to Canada then.");
+        MultiArrayScript.MultiArray[9].Add("You really should think for the people rather than with your wallet.");
+        
+        MultiArrayScript.MultiArray.Add(new Array[String]());
+        MultiArrayScript.MultiArray[10].Add("Why do you love Ottawa so much?");
+        MultiArrayScript.MultiArray[10].Add("This doesn't answer anything.");
+        MultiArrayScript.MultiArray[10].Add("This doesn't answer anything.");
+        
+        MultiArrayScript.MultiArray.Add(new Array[String]());
+        MultiArrayScript.MultiArray[11].Add("Do you have experience delivering a baby?");
+        MultiArrayScript.MultiArray[11].Add("I would have never expected that.");
+        MultiArrayScript.MultiArray[11].Add("Then why are you delivering a baby.");
+        
+        MultiArrayScript.MultiArray.Add(new Array[String]());
+        MultiArrayScript.MultiArray[12].Add("Do you believe that Alberta should be wiped from the face of Canada?");
+        MultiArrayScript.MultiArray[12].Add("Watch your back Trudeau.");
+        MultiArrayScript.MultiArray[12].Add("Well at least you don't hate Alberta.");
+        
+        MultiArrayScript.MultiArray.Add(new Array[String]());
+        MultiArrayScript.MultiArray[13].Add("Have you ever played an instrument?");
+        MultiArrayScript.MultiArray[13].Add("Then Rock on.");
+        MultiArrayScript.MultiArray[13].Add("Booo get off the stage.");
+        
+        MultiArrayScript.MultiArray.Add(new Array[String]());
+        MultiArrayScript.MultiArray[14].Add("Do you think that The World will end tomorrow?");
+        MultiArrayScript.MultiArray[14].Add("Well you are an idiot aren't you.");
+        MultiArrayScript.MultiArray[14].Add("I hoped you wouldn't believe in stupid predictions.");
+        
+        MultiArrayScript.MultiArray.Add(new Array[String]());
+        MultiArrayScript.MultiArray[15].Add("Do you know what we do at nasa?");
+        MultiArrayScript.MultiArray[15].Add("Well then you know we don't like being bothered.");
+        MultiArrayScript.MultiArray[15].Add("Then leave.");
+        
+        MultiArrayScript.MultiArray.Add(new Array[String]());
+        MultiArrayScript.MultiArray[16].Add("Will you run again for prime minister?");
+        MultiArrayScript.MultiArray[16].Add("Haven't you done enough damage.");
+        MultiArrayScript.MultiArray[16].Add("Its great that you are allowing someone to fix your mistakes.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[17].Add("Are you a father of a student here?");
+        MultiArrayScript.MultiArray[17].Add("That's amazing I am so glad that you are. ");
+        MultiArrayScript.MultiArray[17].Add("Well then you are trespassing and i have to ask you to leave.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[18].Add("How is Canada better than China? ");
+        MultiArrayScript.MultiArray[18].Add("You are a dick.");
+        MultiArrayScript.MultiArray[18].Add("Well what are you saying.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[19].Add("Are we good people?");
+        MultiArrayScript.MultiArray[19].Add("I am glad you believe in us.");
+        MultiArrayScript.MultiArray[19].Add("Thank you for confirming my fears.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[20].Add("What are you doing here? We are busy healing people?");
+        MultiArrayScript.MultiArray[20].Add("You are not wanted here. :(");
+        MultiArrayScript.MultiArray[20].Add("You are not wanted here. :)");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[21].Add("should laundromats be free?");
+        MultiArrayScript.MultiArray[21].Add("Thank you we need clean clothes.");
+        MultiArrayScript.MultiArray[21].Add("You only think for money Trudeau.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[22].Add("Are you a ninja?");
+        MultiArrayScript.MultiArray[22].Add("You dont look like one.");
+        MultiArrayScript.MultiArray[22].Add("Oh ok seems legit.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[23].Add("Do you have a fishing license?");
+        MultiArrayScript.MultiArray[23].Add("Well then good you are following general rules.");
+        MultiArrayScript.MultiArray[23].Add("Then don't fish you are disobeying the law.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[24].Add("Do you tan easily?");
+        MultiArrayScript.MultiArray[24].Add("Well don't brag about it.");
+        MultiArrayScript.MultiArray[24].Add("Well it's great that you will be here tanning and having fun with your life too.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[25].Add("Do you like the wind?");
+        MultiArrayScript.MultiArray[25].Add("I know it is great.");
+        MultiArrayScript.MultiArray[25].Add("You have your own opinion.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[26].Add("Are you a robot?");
+        MultiArrayScript.MultiArray[26].Add("Well we're doomed.");
+        MultiArrayScript.MultiArray[26].Add("Good humanity is fine.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[27].Add("Would you be able to satisfy me?");
+        MultiArrayScript.MultiArray[27].Add("You must be great in bed with that confidence.");
+        MultiArrayScript.MultiArray[27].Add("Well don't go looking for opinions like that .");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[28].Add("Are you going to protect the money?");
+        MultiArrayScript.MultiArray[28].Add("Well you can't.");
+        MultiArrayScript.MultiArray[28].Add("Well then I will rob you instead and leave the bank alone.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[29].Add("Is the prime minister on our side?");
+        MultiArrayScript.MultiArray[29].Add("You are so getting an invite to our next gay discussion.");
+        MultiArrayScript.MultiArray[29].Add("Wow you really hate other people and their sexuality.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[30].Add("Will you be moving to Europe anytime soon?");
+        MultiArrayScript.MultiArray[30].Add("We are doomed.");
+        MultiArrayScript.MultiArray[30].Add("Canada needs you i understand.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[31].Add("This will go here to make something special?");
+        MultiArrayScript.MultiArray[31].Add("Yay.");
+        MultiArrayScript.MultiArray[31].Add("Oh Ok.:)");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[32].Add("This steam is great don't you think?");
+        MultiArrayScript.MultiArray[32].Add("Wow why dont you care about the enviornment.");
+        MultiArrayScript.MultiArray[32].Add("Thanks for caring about the enviornment.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[33].Add("Will you be planting trees after this?");
+        MultiArrayScript.MultiArray[33].Add("Well got to keep mother nature happy.");
+        MultiArrayScript.MultiArray[33].Add("Well gotta break that ozone layer.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[34].Add("This Haunted house is so scary?");
+        MultiArrayScript.MultiArray[34].Add("Well if you get scared this easily you shouldn't be leading canada.");
+        MultiArrayScript.MultiArray[34].Add("Well at least someone in canada is brave.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[35].Add("Are you making sure everyone is following the rules? ");
+        MultiArrayScript.MultiArray[35].Add("Well that earned you a place on the nice list.");
+        MultiArrayScript.MultiArray[35].Add("Well that earned you a place on the naughty list.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[36].Add("Would you hire someone based on race?");
+        MultiArrayScript.MultiArray[36].Add("You are racist.");
+        MultiArrayScript.MultiArray[36].Add("Well that the end of this argument.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[37].Add("Is that you trudeau?");
+        MultiArrayScript.MultiArray[37].Add("Wow can I get your signiture.");
+        MultiArrayScript.MultiArray[37].Add("Awe your a fraud.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[38].Add("What are you doing. Is this going to mess with the presidential election?");
+        MultiArrayScript.MultiArray[38].Add("Wrecking our country along with America.");
+        MultiArrayScript.MultiArray[38].Add("Ok the election is soon.I hope that Hillary will be voted in. It can bring us a female Prime minister in the very near future.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[39].Add("Is Global warming happening?");
+        MultiArrayScript.MultiArray[39].Add("Why do you believe in such thoughts?");
+        MultiArrayScript.MultiArray[39].Add("Ok I thought the same thing.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[40].Add("Are you a good person. Have you committed any sins?");
+        MultiArrayScript.MultiArray[40].Add("accepting that you are a sinner will get you into heaven.");
+        MultiArrayScript.MultiArray[40].Add("Well if you never sin then turn around and leave here.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[41].Add("Do you have a problem?");
+        MultiArrayScript.MultiArray[41].Add("Why would someone like you who has a problem be president then?");
+        MultiArrayScript.MultiArray[41].Add("Ok good my PM shouldn't have any problems.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[42].Add("Do you like Communism?");
+        MultiArrayScript.MultiArray[42].Add("Soviet Russia will reign supreme comrade .");
+        MultiArrayScript.MultiArray[42].Add("Soviet russia will invade Canada first. ");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[43].Add("Are you Ok do you need help?");
+        MultiArrayScript.MultiArray[43].Add("oh ok thats ok.");
+        MultiArrayScript.MultiArray[43].Add("Yes you are im calling the ambulance.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[44].Add("Can you read this line and act the part?");
+        MultiArrayScript.MultiArray[44].Add("You suck at acting we need someone skilled.");
+        MultiArrayScript.MultiArray[44].Add("At least you are not good at everything.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[45].Add("Will you support Nazi religion?");
+        MultiArrayScript.MultiArray[45].Add("White supremacists will rule.");
+        MultiArrayScript.MultiArray[45].Add("Well you don't care about us do you.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[46].Add("Will you be working every christmas?");
+        MultiArrayScript.MultiArray[46].Add("Son your family won't ever see you for christmas.");
+        MultiArrayScript.MultiArray[46].Add("I can respect a man who spends time with his family.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[47].Add("Will you roll for initiation?");
+        MultiArrayScript.MultiArray[47].Add("Roll.");
+        MultiArrayScript.MultiArray[47].Add("Please participate as you should.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[48].Add("Aren't you the PM of Canada? ");
+        MultiArrayScript.MultiArray[48].Add("Give me your wallet.");
+        MultiArrayScript.MultiArray[48].Add("Well at least you are not a Public official I hate them..");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[49].Add("Do you own a gun?");
+        MultiArrayScript.MultiArray[49].Add("Yay we are saved.");
+        MultiArrayScript.MultiArray[49].Add("Well time to die.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[50].Add("Do you think that tropical vacations should be exclusive to canada?");
+        MultiArrayScript.MultiArray[50].Add("I agree that would be fun.");
+        MultiArrayScript.MultiArray[50].Add("Everyone needs a vacation too.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[51].Add("Trudeau what are you doing.Stop taking over parliament?");
+        MultiArrayScript.MultiArray[51].Add("Ok it was a misunderstanding.");
+        MultiArrayScript.MultiArray[51].Add("Goodbye parliament hello trudeau land.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[52].Add("Do you like Alberta?");
+        MultiArrayScript.MultiArray[52].Add("well sucks to be you alberta still hates you.");
+        MultiArrayScript.MultiArray[52].Add("this is why alberta hates you.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[53].Add("aren't these waves fun?");
+        MultiArrayScript.MultiArray[53].Add("I know so much fun.");
+        MultiArrayScript.MultiArray[53].Add("I don't know what to say to you then.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[54].Add("Does it hurt Trudeau?");
+        MultiArrayScript.MultiArray[54].Add("good then you won't mind if I do this.");
+        MultiArrayScript.MultiArray[54].Add("You are a god.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[55].Add("You need to stop?");
+        MultiArrayScript.MultiArray[55].Add("I am glad you agree.");
+        MultiArrayScript.MultiArray[55].Add("ok then it is time to impeach.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[56].Add("You are the best?");
+        MultiArrayScript.MultiArray[56].Add("I expected better.");
+        MultiArrayScript.MultiArray[56].Add("I am right,you arent.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[57].Add("Do you want to sponsor our Sports Drink?");
+        MultiArrayScript.MultiArray[57].Add("With you it will sell greatly.");
+        MultiArrayScript.MultiArray[57].Add("I guess you dont care about others getting money off your expense.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[58].Add("What have you done trudeau");
+        MultiArrayScript.MultiArray[58].Add("Why are you my son.");
+        MultiArrayScript.MultiArray[58].Add("That is still not an answer to my question.");
+        
+        MultiArrayScript.MultiArray.Add(new Array [String]());
+        MultiArrayScript.MultiArray[59].Add("What do you think of our new taxes being raised?");
+        MultiArrayScript.MultiArray[59].Add("Stop thinking about yourself for once.");
+        MultiArrayScript.MultiArray[59].Add("Why don't you remove it then.");
+    }
+}

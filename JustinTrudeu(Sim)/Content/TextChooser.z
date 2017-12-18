@@ -1,0 +1,33 @@
+class TextChooser : ZilchComponent
+{
+    [Static]
+    var ChosenText : Integer;
+    [Static]
+    var TotalQuestions : Integer;
+    var Bool : Boolean = true;
+    function Initialize(init : CogInitializer)
+    {
+        this.RandomText();
+        while(MultiArrayScript.MultiArray[TextChooser.ChosenText -1][0] == "Blank")
+        {
+            this.RandomText();
+        }
+
+        TextChooser.TotalQuestions = MultiArrayScript.MultiArray.Count;
+        TextChooser.TotalQuestions -=1;
+
+        MultiArrayScript.MultiArray[TextChooser.ChosenText -1][0] = "Blank";
+        MultiArrayScript.MultiArray[TextChooser.ChosenText -1][1] = "Blank";
+        MultiArrayScript.MultiArray[TextChooser.ChosenText -1][2] = "Blank";
+    }
+    
+    function RandomText()
+    {
+        var randomTextChanger : Random = Random();
+        TextChooser.ChosenText = randomTextChanger.DieRoll(TextChooser.TotalQuestions -1);
+        this.Owner.SpriteText.Text = MultiArrayScript.MultiArray[TextChooser.ChosenText -1][0];
+
+        YesNo.Yes = MultiArrayScript.MultiArray[TextChooser.ChosenText -1][1];
+        YesNo.No = MultiArrayScript.MultiArray[TextChooser.ChosenText -1][2];
+    }
+}

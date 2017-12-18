@@ -1,0 +1,71 @@
+class LocationChooser : ZilchComponent
+{
+    [Static]
+    var DestroyBool: Boolean =false;
+    var LocationNum : Integer;
+    var Left : Boolean = false;
+    var Middle : Boolean = false;
+    var Right : Boolean = false;
+    var ChangeLocation : Boolean = true;
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(this.Owner, Events.MouseEnter, this.OnMouseEnter);
+        Zero.Connect(this.Owner, Events.MouseExit, this.OnMouseExit);
+        Zero.Connect(this.Owner, Events.MouseDown, this.OnMouseDown);
+        Zero.Connect(this.Owner, Events.MouseUp, this.OnMouseUp);
+        this.Owner.Sprite.SpriteSource;
+        this.Owner.Sprite.AnimationSpeed = 0;
+    }
+    
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if (this.Space.LevelSettings.GameLoader.LevelMiddle.LocationChooser.LocationNum == this.LocationNum && this.Left ||
+            this.Space.LevelSettings.GameLoader.LevelRight.LocationChooser.LocationNum == this.LocationNum && this.Left ||
+            this.Space.LevelSettings.GameLoader.LevelMiddle.LocationChooser.LocationNum == this.LocationNum && this.Right ||
+            this.Space.LevelSettings.GameLoader.LevelLeft.LocationChooser.LocationNum == this.LocationNum && this.Right ||
+            this.Space.LevelSettings.GameLoader.LevelLeft.LocationChooser.LocationNum == this.LocationNum && this.Middle||
+            this.Space.LevelSettings.GameLoader.LevelRight.LocationChooser.LocationNum == this.LocationNum && this.Middle)
+        {
+            this.ChangeLocation = true;
+        }
+        if(this.ChangeLocation)
+        {
+            this.SkinGen();
+            this.ChangeLocation = false;
+        }
+        if(LocationChooser.DestroyBool)
+        {
+            this.Owner.Destroy();
+        }
+    }
+    
+    function SkinGen()
+    {
+        var randomLocationGen : Random = Random();
+        this.Owner.Sprite.CurrentFrame = randomLocationGen.DieRoll(this.Owner.Sprite.SpriteSource.FrameCount) - 1;
+        this.LocationNum = this.Owner.Sprite.CurrentFrame;
+    }
+
+    function OnMouseUp(event : ViewportMouseEvent)
+    {
+        GameLoader.GameLoaderBool = true;
+        GameLoader.LocationNum = this.Owner.Sprite.CurrentFrame;
+        LocationChooser.DestroyBool = true;
+    }
+
+    function OnMouseDown(event : ViewportMouseEvent)
+    {
+        this.Owner.Sprite.Color = this.Owner.Sprite.Color + Real4(0.0, 0.0, 0.0, 1.0 - this.Owner.Sprite.Color.W);
+    }
+
+    function OnMouseExit(event : ViewportMouseEvent)
+    {
+        this.Owner.Sprite.Color = this.Owner.Sprite.Color + Real4(0.0, 0.0, 0.0, 1.0 - this.Owner.Sprite.Color.W);
+    }
+
+    function OnMouseEnter(event : ViewportMouseEvent)
+    {
+        this.Owner.Sprite.Color = this.Owner.Sprite.Color + Real4(0.0, 0.0, 0.0, 0.75 - this.Owner.Sprite.Color.W);
+    }
+}
